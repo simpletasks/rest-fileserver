@@ -1,9 +1,12 @@
-package com.javadevbod.fileserver.data.jpa;
+package com.javadevbod.fileserver.data.jpa.repositories;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.javadevbod.fileserver.data.jpa.entities.File;
+import com.javadevbod.fileserver.data.jpa.entities.User;
 
 @Repository
 public interface FileRepository extends JpaRepository<File, Long>{

@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,11 +7,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.javadevbod.fileserver.data.jpa.File;
-import com.javadevbod.fileserver.data.jpa.FileService;
-import com.javadevbod.fileserver.data.jpa.ShareFileService;
-import com.javadevbod.fileserver.data.jpa.User;
-import com.javadevbod.fileserver.data.jpa.UserService;
+import com.javadevbod.fileserver.controllers.entities.FileShareInvite;
+import com.javadevbod.fileserver.data.jpa.entities.File;
+import com.javadevbod.fileserver.data.jpa.entities.User;
+import com.javadevbod.fileserver.data.jpa.services.FileService;
+import com.javadevbod.fileserver.data.jpa.services.ShareFileService;
+import com.javadevbod.fileserver.data.jpa.services.UserService;
 
 @Service
 public class UploadService {

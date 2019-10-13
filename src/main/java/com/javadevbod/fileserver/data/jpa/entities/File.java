@@ -1,6 +1,4 @@
-package com.javadevbod.fileserver.data.jpa;
-
-import java.util.UUID;
+package com.javadevbod.fileserver.data.jpa.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

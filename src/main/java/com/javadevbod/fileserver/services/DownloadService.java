@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.services;
 
 import java.io.IOException;
 
@@ -13,12 +13,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import com.javadevbod.fileserver.data.jpa.File;
-import com.javadevbod.fileserver.data.jpa.FileService;
-import com.javadevbod.fileserver.data.jpa.ShareFileService;
-import com.javadevbod.fileserver.data.jpa.SharedFile;
-import com.javadevbod.fileserver.data.jpa.User;
-import com.javadevbod.fileserver.data.jpa.UserService;
+import com.javadevbod.fileserver.data.jpa.entities.File;
+import com.javadevbod.fileserver.data.jpa.entities.SharedFile;
+import com.javadevbod.fileserver.data.jpa.entities.User;
+import com.javadevbod.fileserver.data.jpa.services.FileService;
+import com.javadevbod.fileserver.data.jpa.services.ShareFileService;
+import com.javadevbod.fileserver.data.jpa.services.UserService;
 
 @Service
 public class DownloadService {

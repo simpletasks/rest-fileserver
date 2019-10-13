@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javadevbod.fileserver.data.jpa.User;
-import com.javadevbod.fileserver.data.jpa.UserService;
+import com.javadevbod.fileserver.data.jpa.entities.User;
+import com.javadevbod.fileserver.data.jpa.services.UserService;
+import com.javadevbod.fileserver.services.FileSystemService;
 
 @RequestMapping(path = "/")
 @RestController

@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver.data.jpa;
+package com.javadevbod.fileserver.data.jpa.services;
 
 import java.util.Collections;
 import java.util.List;
@@ -6,6 +6,11 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.javadevbod.fileserver.data.jpa.entities.File;
+import com.javadevbod.fileserver.data.jpa.entities.User;
+import com.javadevbod.fileserver.data.jpa.repositories.FileRepository;
+import com.javadevbod.fileserver.utils.comparators.FileNrComparator;
 
 @Service
 public class FileService {

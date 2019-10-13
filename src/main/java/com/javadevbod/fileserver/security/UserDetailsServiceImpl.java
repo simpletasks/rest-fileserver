@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.javadevbod.fileserver.data.jpa.User;
-import com.javadevbod.fileserver.data.jpa.UserRepository;
+import com.javadevbod.fileserver.data.jpa.entities.User;
+import com.javadevbod.fileserver.data.jpa.repositories.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

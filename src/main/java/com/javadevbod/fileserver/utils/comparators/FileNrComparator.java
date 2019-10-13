@@ -1,6 +1,8 @@
-package com.javadevbod.fileserver.data.jpa;
+package com.javadevbod.fileserver.utils.comparators;
 
 import java.util.Comparator;
+
+import com.javadevbod.fileserver.data.jpa.entities.File;
 
 public class FileNrComparator implements Comparator<File> {
 

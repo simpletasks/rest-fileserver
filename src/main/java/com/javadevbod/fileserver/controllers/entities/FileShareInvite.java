@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.controllers.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

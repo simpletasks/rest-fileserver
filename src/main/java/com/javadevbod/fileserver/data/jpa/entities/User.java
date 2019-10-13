@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver.data.jpa;
+package com.javadevbod.fileserver.data.jpa.entities;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,7 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.javadevbod.fileserver.data.jpa.UserService;
+import com.javadevbod.fileserver.controllers.entities.AvailableFiles;
+import com.javadevbod.fileserver.controllers.entities.FileShareInvite;
+import com.javadevbod.fileserver.data.jpa.services.UserService;
+import com.javadevbod.fileserver.services.DownloadService;
+import com.javadevbod.fileserver.services.UploadService;
 
 @RequestMapping(path = "api")
 @RestController

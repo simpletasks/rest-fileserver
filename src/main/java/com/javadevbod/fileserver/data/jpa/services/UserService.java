@@ -1,9 +1,11 @@
-package com.javadevbod.fileserver.data.jpa;
+package com.javadevbod.fileserver.data.jpa.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javadevbod.fileserver.AvailableFiles;
+import com.javadevbod.fileserver.controllers.entities.AvailableFiles;
+import com.javadevbod.fileserver.data.jpa.entities.User;
+import com.javadevbod.fileserver.data.jpa.repositories.UserRepository;
 
 @Service
 public class UserService {

@@ -1,9 +1,9 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.controllers.entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javadevbod.fileserver.data.jpa.File;
+import com.javadevbod.fileserver.data.jpa.entities.File;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

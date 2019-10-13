@@ -1,4 +1,4 @@
-package com.javadevbod.fileserver;
+package com.javadevbod.fileserver.services;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -16,7 +16,7 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.javadevbod.fileserver.data.jpa.User;
+import com.javadevbod.fileserver.data.jpa.entities.User;
 
 @Service
 public class FileSystemService {
@@ -92,7 +92,7 @@ public class FileSystemService {
         }
     }
 
-    public Resource loadFileAsResource(User owner, com.javadevbod.fileserver.data.jpa.File file) {
+    public Resource loadFileAsResource(User owner, com.javadevbod.fileserver.data.jpa.entities.File file) {
         String userUniqueDir = owner.getUsername().replace("@", "__");
 
         try {
