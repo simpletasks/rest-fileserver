@@ -39,8 +39,8 @@ public class FileController {
         return new ResponseEntity<AvailableFiles>(availableFiles, HttpStatus.OK);
     }
 
-    @PostMapping(path = "file"/* , consumes = MediaType.MULTIPART_FORM_DATA_VALUE */)
-    public ResponseEntity<String> uploadFile(@RequestParam("asdf") MultipartFile file, Authentication authentication) {
+    @PostMapping(path = "file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file, Authentication authentication) {
 
         return uploadService.uploadFile(file, authentication);
     }
