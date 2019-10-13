@@ -4,6 +4,9 @@ In project directory
 
 ``` mvn package ``` to build jar.
 
+### application properties
+Change configuration here. Default port is 8081
+
 ## Run
 Example run commad
 
