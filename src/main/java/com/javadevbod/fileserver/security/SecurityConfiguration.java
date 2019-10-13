@@ -20,42 +20,21 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private static final String ROLE_PRIVATE = "PRIVATE";
-
-    @Autowired
-    private UserDetailsService userDetailsService;
-    
     @Autowired
     private DaoAuthenticationProvider daoAuthenticationProvider;
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
-//        auth.inMemoryAuthentication().withUser("user").password("{noop}admin").roles(ROLE_PRIVATE);
-//    }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(daoAuthenticationProvider);
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
         http.headers().frameOptions().sameOrigin();
-        http.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/api/**", "/h2-console/**").permitAll().anyRequest().authenticated();
+        http.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/api/**", "/h2-console/**").authenticated().anyRequest().permitAll();
 
-    }
-
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/register");
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-//        authenticationProvider.setUserDetailsService(userDetailsService);
-//        authenticationProvider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
-//        auth.userDetailsService(userDetailsService).and().authenticationProvider(authenticationProvider);
-        auth.authenticationProvider(daoAuthenticationProvider);
     }
 
     @SuppressWarnings("deprecation")
@@ -63,6 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
+
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider(PasswordEncoder passwordEncoder, UserDetailsService userDetailsService) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -70,16 +50,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         provider.setUserDetailsService(userDetailsService);
         return provider;
     }
-
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//
-//        @SuppressWarnings("deprecation")
-//        User.UserBuilder users = User.withDefaultPasswordEncoder();
-//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-//        manager.createUser(users.username("user").password("admin").roles(ROLE_PRIVATE).build());
-//        return manager;
-//
-//    }
-
 }

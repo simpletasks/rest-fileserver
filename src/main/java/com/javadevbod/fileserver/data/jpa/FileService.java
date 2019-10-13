@@ -16,12 +16,12 @@ public class FileService {
     public List<File> findByUser(User user) {
         return repository.findByUser(user);
     }
-    
+
     public File findByUserAndFileId(User user, String fileId) {
         return repository.findByUserAndFileId(user, fileId);
     }
 
-    public File saveFile(User user, String filename) {
+    public File persist(User user, String filename) {
 
         List<File> existingFiles = repository.findByUserAndFilename(user, filename);
         Collections.sort(existingFiles, new FileNrComparator().reversed());
@@ -38,12 +38,19 @@ public class FileService {
         newFile.setFileId(generatedId);
 
         repository.save(newFile);
-
         return newFile;
 
     }
 
-    private String generateUniqueUUID() {
+    public File update(File file) {
+        return repository.save(file);
+    }
+    
+    public void delete(File file) {
+        repository.delete(file);
+    }
+
+    public String generateUniqueUUID() {
         String generatedId = UUID.randomUUID().toString();
         if (repository.countByFileId(generatedId) > 0) {
             return generateUniqueUUID();

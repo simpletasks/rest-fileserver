@@ -25,8 +25,6 @@ public class RegisterController {
     @PostMapping(path = "register", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> registerUser(@RequestBody User user) {
 
-        System.out.println("new user :" + user.toString());
-        
         if (userService.isNewUniqueEmail(user)) {
             userService.persist(user);
             fileSystemService.createUserDirectory(user.getUsername());
