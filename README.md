@@ -5,7 +5,12 @@ In project directory
 ``` mvn package ``` to build jar.
 
 ### application properties
-Change configuration here. Default port is 8081
+Change configuration here. Default app port is 8081
+
+### H2 database console
+`localhost:8081/h2-console/`
+
+View database here.
 
 ## Run
 Example run commad
